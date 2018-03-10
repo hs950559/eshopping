@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { AppComponent } from './app.component';
 
 // Import containers
@@ -69,6 +73,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { environment } from 'environments/environment';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   imports: [
@@ -76,7 +82,11 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   declarations: [
     AppComponent,
@@ -89,9 +99,11 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
     OrderSuccessComponent,
     MyOrdersComponent
   ],
-  providers: [{
+  providers: [
+    AuthService,
+  {
     provide: LocationStrategy,
-    useClass: HashLocationStrategy
+    useClass: HashLocationStrategy,
   }],
   bootstrap: [ AppComponent ]
 })

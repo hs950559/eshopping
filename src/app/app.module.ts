@@ -79,6 +79,8 @@ import { AuthGuard } from './auth/auth.guard';
 import { UserService } from './services/user.service';
 import { AdminAuthGuard } from './auth/admin-auth.guard';
 import { AccessDeniedComponent } from './components/access-denied.component';
+import { ProductService } from './admin/product.service';
+import { CategoryService } from './services/category.service';
 
 @NgModule({
   imports: [
@@ -107,6 +109,8 @@ import { AccessDeniedComponent } from './components/access-denied.component';
   providers: [
     AuthService,
     UserService,
+    ProductService,
+    CategoryService,
     AuthGuard,
     AdminAuthGuard,
   {

@@ -13,6 +13,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { AdminAuthGuard } from './auth/admin-auth.guard';
 import { AccessDeniedComponent } from './components/access-denied.component';
+import { ProductsComponent } from './products/products.component';
 
 export const routes: Routes = [
   {
@@ -28,8 +29,19 @@ export const routes: Routes = [
     },
     children: [
       {
+        path: 'table-demo',
+        data: {
+          title: 'Table Demo'
+        },
+        loadChildren: './table-demo/table-demo.module#TableDemoModule'
+      },
+      {
         path: 'admin',
         loadChildren: './admin/admin.module#AdminModule'
+      },
+      {
+        path: 'products',
+        component: ProductsComponent
       },
       {
         path: 'shopping-cart',
@@ -113,7 +125,7 @@ export const routes: Routes = [
         loadChildren: './auth/auth.module#AuthModule',
       }
     ]
-  },
+  }
   // {
   //   path: 'admin',
   //   component: SimpleLayoutComponent,

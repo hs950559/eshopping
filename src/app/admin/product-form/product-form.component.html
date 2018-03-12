@@ -48,12 +48,6 @@
         </form>
   </div>
   <div class="col-sm-6">
-    <div class="card" *ngIf="product.title">
-        <img class="card-img-top" *ngIf="product.imageUrl" [src]="product.imageUrl" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">{{ title.value }}</h4>
-          <p class="card-text">{{ price.value | currency:'USD':'symbol' }}</p>
-        </div>
-      </div>
+      <product-card [product]="product" [showActions]="false"></product-card>
   </div>
 </div>

@@ -10,13 +10,15 @@ import { CategoryService } from '../services/category.service';
 import { ProductService } from './product.service';
 import { CustomFormsModule } from 'ng2-validation'
 import { ProductFormComponent } from './product-form/product-form.component';
+import { SharedModule } from '../shared/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     CustomFormsModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    SharedModule
   ],
   declarations: [
     AdminProductsComponent,

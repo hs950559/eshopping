@@ -36,6 +36,7 @@
     "font-awesome": "^4.7.0",
     "moment": "2.21.0",
     "ng2-charts": "1.6.0",
+    "ng2-validation": "^4.2.0",
     "ngx-bootstrap": "2.0.2",
     "rxjs": "5.5.6",
     "simple-line-icons": "^2.4.1",

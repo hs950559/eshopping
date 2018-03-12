@@ -1,3 +1,36 @@
-<p>
-  admin-products works!
-</p>
+
+<div class="row">
+    <div class="col-sm-12">
+        <a routerLink="new" class="btn btn-primary mb-2">Add New Product</a>
+    </div>
+  </div>
+  <div class="form-group">
+      <label for="query" class="sr-only">Filter Products</label>
+      <input type="search" class="form-control" id="query" placeholder="Search Products" #query (keyup)="filterProducts(query.value)">
+      <small class="form-text text-muted">Filter products by title</small>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of filteredProducts">
+        <td>{{ product.title }}</td>
+        <td>{{ product.price | currency:'USD':'symbol' }}</td>
+        <td>{{ product.category }}</td>
+        <td>
+          <a class="btn btn-primary" [routerLink]="['/admin/products', product.key, 'edit']">
+            <i class="ti-pencil"></i>
+          </a>
+          <button class="btn btn-danger" (click)="removeProduct(product.key)">
+            <i class="ti-close"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

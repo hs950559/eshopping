@@ -75,6 +75,10 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { environment } from 'environments/environment';
 import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth.guard';
+import { UserService } from './services/user.service';
+import { AdminAuthGuard } from './auth/admin-auth.guard';
+import { AccessDeniedComponent } from './components/access-denied.component';
 
 @NgModule({
   imports: [
@@ -97,10 +101,14 @@ import { AuthService } from './auth/auth.service';
     ShoppingCartComponent,
     CheckoutComponent,
     OrderSuccessComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    AccessDeniedComponent
   ],
   providers: [
     AuthService,
+    UserService,
+    AuthGuard,
+    AdminAuthGuard,
   {
     provide: LocationStrategy,
     useClass: HashLocationStrategy,

@@ -83,6 +83,7 @@ import { ProductService } from './admin/product.service';
 import { CategoryService } from './services/category.service';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { SharedModule } from './shared/shared/shared.module';
+import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 
 @NgModule({
   imports: [
@@ -117,6 +118,7 @@ import { SharedModule } from './shared/shared/shared.module';
     CategoryService,
     AuthGuard,
     AdminAuthGuard,
+    ShoppingCartService,
   {
     provide: LocationStrategy,
     useClass: HashLocationStrategy,

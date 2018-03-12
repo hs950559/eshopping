@@ -81,6 +81,8 @@ import { AdminAuthGuard } from './auth/admin-auth.guard';
 import { AccessDeniedComponent } from './components/access-denied.component';
 import { ProductService } from './admin/product.service';
 import { CategoryService } from './services/category.service';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   imports: [
@@ -104,7 +106,9 @@ import { CategoryService } from './services/category.service';
     CheckoutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    AccessDeniedComponent
+    AccessDeniedComponent,
+    ProductFilterComponent,
+    ProductCardComponent
   ],
   providers: [
     AuthService,

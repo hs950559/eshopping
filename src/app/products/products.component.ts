@@ -16,8 +16,6 @@ export class ProductsComponent implements OnInit {
   products$: Observable<any[]>;
   products: Product[];
   filteredProducts: any[];
-  categoriesRef: AngularFireList<any>;
-  categories$: Observable<any[]>;
   category: string;
 
   constructor(private route: ActivatedRoute, private productService: ProductService, private categoryService: CategoryService) {
@@ -37,11 +35,6 @@ export class ProductsComponent implements OnInit {
       } else {
         this.filteredProducts = this.products;
       }
-    });
-
-    this.categoriesRef = categoryService.getCategories();
-    this.categories$ = this.categoriesRef.snapshotChanges().map(changes => {
-      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });
   }
 

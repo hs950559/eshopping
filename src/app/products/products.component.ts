@@ -34,6 +34,8 @@ export class ProductsComponent implements OnInit {
 
         if (this.category) {
           this.filteredProducts = this.products.filter( p => p.category === this.category );
+        } else {
+          this.filteredProducts = this.products;
         }
       });
 

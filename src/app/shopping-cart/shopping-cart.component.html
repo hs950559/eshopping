@@ -8,25 +8,23 @@
     <thead>
       <tr>
         <th>Product</th>
-        <th>Quantity</th>
-        <th>Actions</th>
+        <th class="text-center w-25">Quantity</th>
+        <th class="text-right w-25">Price</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of cart.items">
-        <td>{{ item.product.title }}</td>
-        <td>
+        <td><img [src]="item.product.imageUrl" alt="product" class="img-thumbnail rounded-circle"> {{ item.product.title }}</td>
+        <td class="text-center">
             <product-quantity [product]="item.product" [shoppingCart]="cart"></product-quantity>
         </td>
-        <td>
+        <td class="text-right">
           {{ item.totalPrice | currency:'USD':'symbol' }}
         </td>
       </tr>
     </tbody>
     <tfoot>
-      <th></th>
-      <th></th>
-      <th>{{ cart.totalPrice | currency:'USD':'symbol' }}</th>
+      <th class="text-right" colspan="3">{{ cart.totalPrice | currency:'USD':'symbol' }}</th>
     </tfoot>
   </table>
 </ng-container>

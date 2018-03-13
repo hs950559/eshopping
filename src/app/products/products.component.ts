@@ -7,49 +7,53 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/product';
 import { switchMap } from 'rxjs/operators/switchMap';
 import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
-import { Subscription } from 'rxjs/Subscription';
+import { ShoppingCart } from '../models/shopping-cart';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit, OnDestroy {
+export class ProductsComponent implements OnInit {
   productsRef: AngularFireList<any>;
   products$: Observable<any[]>;
   products: Product[];
   filteredProducts: any[];
   category: string;
-  cart: any;
-  subscription: Subscription;
+  cart$: Observable<ShoppingCart>;
 
   constructor(private route: ActivatedRoute,
     private productService: ProductService,
     private categoryService: CategoryService,
     private cartService: ShoppingCartService) {
-    this.productsRef = productService.getAll();
+
+  }
+
+  applyFilter() {
+    if (this.category) {
+      this.filteredProducts = this.products.filter( p => p.category === this.category );
+    } else {
+      this.filteredProducts = this.products;
+    }
+  }
+
+  populateProducts() {
+    this.productsRef = this.productService.getAll();
     this.products$ = this.productsRef.snapshotChanges().map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });
 
     this.products$.switchMap((res) => {
       this.filteredProducts = this.products = res;
-      return route.queryParamMap;
+      return this.route.queryParamMap;
     }).subscribe(params => {
       this.category = params.get('category');
 
-      if (this.category) {
-        this.filteredProducts = this.products.filter( p => p.category === this.category );
-      } else {
-        this.filteredProducts = this.products;
-      }
+      this.applyFilter();
     });
   }
 
   async ngOnInit() {
-    this.subscription = (await this.cartService.getCart()).subscribe(cart => this.cart = cart);
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.cart$ = await this.cartService.getCart();
+    this.populateProducts();
   }
 }

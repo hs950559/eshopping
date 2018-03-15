@@ -10,7 +10,7 @@ import { CategoryService } from '../services/category.service';
 import { ProductService } from './product.service';
 import { CustomFormsModule } from 'ng2-validation'
 import { ProductFormComponent } from './product-form/product-form.component';
-import { SharedModule } from '../shared/shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [

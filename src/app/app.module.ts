@@ -82,12 +82,12 @@ import { AccessDeniedComponent } from './components/access-denied.component';
 import { ProductService } from './admin/product.service';
 import { CategoryService } from './services/category.service';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
-import { SharedModule } from './shared/shared/shared.module';
 import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 import { FormsModule } from '@angular/forms';
 import { OrderService } from './services/order.service';
 import { ShoppingCartSummaryComponent } from './shopping-cart/shopping-cart-summary/shopping-cart-summary.component';
 import { ShippingFormComponent } from './checkout/shipping-form/shipping-form.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   imports: [

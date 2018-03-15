@@ -1,0 +1,89 @@
+{
+  "categories" : {
+    "aircraft" : {
+      "name" : "Aeroplanes & Drones"
+    },
+    "bread" : {
+      "name" : "Bread"
+    },
+    "dairy" : {
+      "name" : "Dairy"
+    },
+    "fruits" : {
+      "name" : "Fruits"
+    },
+    "kids" : {
+      "name" : "Kids & Toys"
+    },
+    "vegitables" : {
+      "name" : "Vegitables"
+    }
+  },
+  "products" : {
+    "-L7KZ31sLtUsN4hcEUe-" : {
+      "category" : "dairy",
+      "imageUrl" : "https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
+      "price" : 10000,
+      "title" : "koool 2"
+    },
+    "-L7TmUSSB3v94MuUT8l9" : {
+      "category" : "dairy",
+      "imageUrl" : "http://www.dogster.com/wp-content/uploads/2015/05/google-dog-search-2014-05.jpg",
+      "price" : 222,
+      "title" : "one"
+    },
+    "-L7TmcBXXoud2eQDwPb3" : {
+      "category" : "kids",
+      "imageUrl" : "https://photos.travelblog.org/Photos/171218/541830/f/5575147-Google_Image-_Dog-0.jpg",
+      "price" : 43,
+      "title" : "dog 2"
+    }
+  },
+  "shopping-carts" : {
+    "-L7PmoCmu2efOMR3lzVP" : {
+      "items" : {
+        "-L7KZ31sLtUsN4hcEUe-" : {
+          "product" : {
+            "category" : "dairy",
+            "imageUrl" : "https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
+            "key" : "-L7KZ31sLtUsN4hcEUe-",
+            "price" : 10000,
+            "title" : "koool 2"
+          },
+          "quantity" : 6
+        },
+        "-L7TmUSSB3v94MuUT8l9" : {
+          "product" : {
+            "category" : "dairy",
+            "imageUrl" : "http://www.dogster.com/wp-content/uploads/2015/05/google-dog-search-2014-05.jpg",
+            "key" : "-L7TmUSSB3v94MuUT8l9",
+            "price" : 222,
+            "title" : "one"
+          },
+          "quantity" : 7
+        },
+        "-L7TmcBXXoud2eQDwPb3" : {
+          "product" : {
+            "category" : "kids",
+            "imageUrl" : "https://photos.travelblog.org/Photos/171218/541830/f/5575147-Google_Image-_Dog-0.jpg",
+            "key" : "-L7TmcBXXoud2eQDwPb3",
+            "price" : 43,
+            "title" : "dog 2"
+          },
+          "quantity" : 8
+        }
+      }
+    }
+  },
+  "users" : {
+    "PJHPe9fRVJc2IixwiATCFPjaa7l1" : {
+      "email" : "hemant.ajax@gmail.com",
+      "isAdmin" : true,
+      "name" : "Hemant Singh"
+    },
+    "eRVqgoBam2YJQGPo3iSazgR6Hw02" : {
+      "email" : "hesingoracle@gmail.com",
+      "name" : "Hemant Singh"
+    }
+  }
+}

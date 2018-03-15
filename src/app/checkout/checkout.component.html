@@ -1,3 +1,34 @@
-<p>
-  checkout works!
-</p>
+<div class="row">
+  <div class="col-sm-6">
+    {{ f.value | json }}
+      <form #f="ngForm" (submit)="placeOrder(f.value)">
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="shipping.name" #name="ngModel" [ngClass]="{'is-invalid': name.dirty && name.invalid}" required>
+              <div *ngIf="name.dirty && name.invalid" class="invalid-feedback">
+                  <p *ngIf='name.errors.required'>title is required</p>
+                </div>
+          </div>
+          <div class="form-group">
+              <label for="address">Address</label>
+              <textarea class="form-control" id="addressline1" name="addressline1" placeholder="Address line 1" [(ngModel)]="shipping.addressline1" #addressline1="ngModel" [ngClass]="{'is-invalid': addressline1.dirty && addressline1.invalid}" required></textarea>
+              <textarea [(ngModel)]="shipping.addressline2" class="form-control mt-2" id="addressline2" name="addressline2" placeholder="Address line 2" ngModel #addressline2="ngModel" [ngClass]="{'is-invalid': addressline2.dirty && addressline2.invalid}"></textarea>
+
+              <div *ngIf="addressline1.dirty && addressline1.invalid" class="invalid-feedback">
+                <p *ngIf='addressline1.errors.required'>Address is required</p>
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input [(ngModel)]="shipping.city" type="text" class="form-control" id="city" name="city" ngModel #city="ngModel" [ngClass]="{'is-invalid': city.dirty && city.invalid}" required>
+            <div *ngIf="city.dirty && city.invalid" class="invalid-feedback">
+                <p *ngIf='city.errors.required'>City is required</p>
+              </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Add Shipping</button>
+        </form>
+  </div>
+  <div class="col-sm-6">
+      <!-- <product-card [product]="product" [showActions]="false"></product-card> -->
+  </div>
+</div>

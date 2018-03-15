@@ -84,10 +84,13 @@ import { CategoryService } from './services/category.service';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { SharedModule } from './shared/shared/shared.module';
 import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
+import { FormsModule } from '@angular/forms';
+import { OrderService } from './services/order.service';
 
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
@@ -119,6 +122,7 @@ import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
     AuthGuard,
     AdminAuthGuard,
     ShoppingCartService,
+    OrderService,
   {
     provide: LocationStrategy,
     useClass: HashLocationStrategy,

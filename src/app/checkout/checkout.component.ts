@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
-import { ShoppingCart } from '../models/shopping-cart';
 import { Subscription } from 'rxjs/Subscription';
 import { OrderService } from '../services/order.service';
 import { AuthService } from '../auth/auth.service';
+import { Order } from '../models/order';
+import { ShoppingCart } from '../models/shopping-cart';
 
 @Component({
   templateUrl: './checkout.component.html',
@@ -11,10 +12,10 @@ import { AuthService } from '../auth/auth.service';
 })
 export class CheckoutComponent implements OnInit, OnDestroy {
   shipping = {};
-  cart: ShoppingCart;
   cartSubscription: Subscription;
   userSubscription: Subscription;
   userId: string
+  cart: ShoppingCart;
 
   constructor(private cartService: ShoppingCartService, private orderService: OrderService, private authService: AuthService) { }
 
@@ -25,23 +26,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   }
 
   placeOrder(val) {
-    const order = {
-      userId: this.userId,
-      datePlaced: new Date().getTime(),
-      shipping: this.shipping,
-      items: this.cart.items.map(i => {
-        return {
-          product: {
-            title: i.product.title,
-            imageUrl: i.product.imageUrl,
-            price: i.product.price
-          },
-          quantity: i.quantity,
-          totalPrice: i.totalPrice
-        }
-      })
-    };
-
+    const order = new Order(this.userId, this.shipping, this.cart);
     this.orderService.storeOrder(order);
   }
 

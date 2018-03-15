@@ -86,6 +86,8 @@ import { SharedModule } from './shared/shared/shared.module';
 import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 import { FormsModule } from '@angular/forms';
 import { OrderService } from './services/order.service';
+import { ShoppingCartSummaryComponent } from './shopping-cart/shopping-cart-summary/shopping-cart-summary.component';
+import { ShippingFormComponent } from './checkout/shipping-form/shipping-form.component';
 
 @NgModule({
   imports: [
@@ -112,7 +114,9 @@ import { OrderService } from './services/order.service';
     OrderSuccessComponent,
     MyOrdersComponent,
     AccessDeniedComponent,
-    ProductFilterComponent
+    ProductFilterComponent,
+    ShoppingCartSummaryComponent,
+    ShippingFormComponent
   ],
   providers: [
     AuthService,

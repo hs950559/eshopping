@@ -16,8 +16,8 @@ export class ProductQuantityComponent implements OnInit {
   constructor(private cartService: ShoppingCartService) { }
 
   ngOnInit() {
-    console.log(this.product)
-    console.log(this.shoppingCart.getQuantity(this.product));
+    // console.log(this.product)
+    // console.log(this.shoppingCart.getQuantity(this.product));
   }
 
   addToCart() {

@@ -1,3 +1,2 @@
-<p>
-  admin-orders works!
-</p>
+<pre *ngIf="orders$ | async as orders">
+{{ orders | json }}</pre>

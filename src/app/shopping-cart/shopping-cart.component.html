@@ -4,7 +4,6 @@
     You have <strong>{{ cart.totalItemsCount }} items</strong> in your shopping cart.
     <button class="btn btn-link" (click)="clearCart()">Clear Cart</button>
   </p>
-
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -14,13 +13,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of cart.items">
-        <td><img [src]="item.product.imageUrl" alt="product" class="img-thumbnail rounded-circle"> {{ item.product.title }}</td>
+      <tr *ngFor="let productId of cart.productIds">
+        <td><img [src]="cart.items[productId]?.product.imageUrl" alt="product" class="img-thumbnail rounded-circle"> {{ cart.items[productId].product.title }}</td>
         <td class="text-center">
-            <product-quantity [product]="item.product" [shoppingCart]="cart"></product-quantity>
+            <product-quantity [product]="cart.items[productId]?.product" [shoppingCart]="cart"></product-quantity>
         </td>
         <td class="text-right">
-          {{ item.totalPrice | currency:'USD':'symbol' }}
+          {{ cart.items[productId]?.totalPrice | currency:'USD':'symbol' }}
         </td>
       </tr>
     </tbody>

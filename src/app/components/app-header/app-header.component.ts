@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
-import { AppUser } from '../../models/user';
-import { ShoppingCartService } from '../../shopping-cart/shopping-cart.service';
+import { AppUser } from '../../shared/models/user';
+import { ShoppingCartService } from '../../shopping/components/shopping-cart/shopping-cart.service';
 import { Observable } from 'rxjs/Observable';
-import { ShoppingCart } from '../../models/shopping-cart';
+import { ShoppingCart } from '../../shared/models/shopping-cart';
 
 @Component({
   selector: 'app-header',

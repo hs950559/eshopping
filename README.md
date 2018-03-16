@@ -17,3 +17,5 @@ Demo - https://eshop-b05d6.firebaseapp.com/
 
 Form Validation https://github.com/yuyang041060120/ng2-validation
 
+Ctrl + alt + o - remove unused imports (typescript hero plugin in action)
+

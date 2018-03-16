@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from '../services/order.service';
-import { AuthService } from '../auth/auth.service';
+import { OrderService } from '../../../services/order.service';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   templateUrl: './my-orders.component.html',

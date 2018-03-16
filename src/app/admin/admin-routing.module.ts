@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminProductsComponent } from './admin-products/admin-products.component';
-import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
+import { AdminProductsComponent } from './components/admin-products/admin-products.component';
+import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
 import { AuthGuard } from '../auth/auth.guard';
-import { AdminAuthGuard } from '../auth/admin-auth.guard';
-import { ProductFormComponent } from './product-form/product-form.component';
+import { AdminAuthGuard } from './services/admin-auth.guard';
+import { ProductFormComponent } from './components/product-form/product-form.component';
 
 const routes: Routes = [
   {

@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CategoryService } from '../../services/category.service';
+import { CategoryService } from '../../../services/category.service';
 import { AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-import { ProductService } from '../product.service';
+import { ProductService } from '../../product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operator/take';
 @Component({

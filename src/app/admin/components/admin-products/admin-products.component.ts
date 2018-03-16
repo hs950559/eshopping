@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
+import { ProductService } from '../../product.service';
 import { AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-import { Product } from '../../models/product';
+import { Product } from '../../../shared/models/product';
 
 @Component({
   selector: 'app-admin-products',

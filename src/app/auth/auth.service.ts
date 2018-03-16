@@ -4,7 +4,7 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../services/user.service';
-import { AppUser } from '../models/user';
+import { AppUser } from '../shared/models/user';
 import { switchMap } from 'rxjs/operators/switchMap';
 
 @Injectable()

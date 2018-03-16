@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
 import { Subscription } from 'rxjs/Subscription';
-import { OrderService } from '../services/order.service';
-import { AuthService } from '../auth/auth.service';
-import { ShoppingCart } from '../models/shopping-cart';
+import { OrderService } from '../../../services/order.service';
+import { AuthService } from '../../../auth/auth.service';
+import { ShoppingCart } from '../../../shared/models/shopping-cart';
 import { Router } from '@angular/router';
 import { Observable } from '@firebase/util';
 

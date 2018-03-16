@@ -6,14 +6,14 @@ import {
   FullLayoutComponent,
   SimpleLayoutComponent
 } from './containers';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { MyOrdersComponent } from './my-orders/my-orders.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { ShoppingCartComponent } from './shopping/components/shopping-cart/shopping-cart.component';
+import { MyOrdersComponent } from './shopping/components/my-orders/my-orders.component';
+import { CheckoutComponent } from './shopping/components/checkout/checkout.component';
 import { AuthGuard } from './auth/auth.guard';
-import { OrderSuccessComponent } from './order-success/order-success.component';
-import { AdminAuthGuard } from './auth/admin-auth.guard';
+import { OrderSuccessComponent } from './shopping/components/order-success/order-success.component';
+import { AdminAuthGuard } from './admin/services/admin-auth.guard';
 import { AccessDeniedComponent } from './components/access-denied.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductsComponent } from './shopping/components/products/products.component';
 
 export const routes: Routes = [
   {
@@ -38,29 +38,6 @@ export const routes: Routes = [
       {
         path: 'admin',
         loadChildren: './admin/admin.module#AdminModule'
-      },
-      {
-        path: 'products',
-        component: ProductsComponent
-      },
-      {
-        path: 'shopping-cart',
-        component: ShoppingCartComponent
-      },
-      {
-        path: 'my-orders',
-        component: MyOrdersComponent,
-        canActivate: [ AuthGuard ]
-      },
-      {
-        path: 'order-success/:id',
-        component: OrderSuccessComponent,
-        canActivate: [ AuthGuard ]
-      },
-      {
-        path: 'checkout',
-        component: CheckoutComponent,
-        canActivate: [ AuthGuard ]
       },
       {
         path: 'access-denied',

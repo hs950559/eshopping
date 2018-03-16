@@ -1,13 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ProductService } from '../admin/product.service';
+import { ProductService } from '../../../admin/product.service';
 import { AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-import { CategoryService } from '../services/category.service';
+import { CategoryService } from '../../../services/category.service';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../models/product';
+import { Product } from '../../../shared/models/product';
 import { switchMap } from 'rxjs/operators/switchMap';
 import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
-import { ShoppingCart } from '../models/shopping-cart';
+import { ShoppingCart } from '../../../shared/models/shopping-cart';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
